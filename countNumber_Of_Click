@@ -1,0 +1,68 @@
+package com.example.basic_implementations;
+
+import androidx.appcompat.app.AppCompatActivity;
+#java file
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class CountNumberOfClick extends AppCompatActivity {
+Button btn1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_count_number_of_click);
+
+        btn1=findViewById(R.id.clickbtn);
+
+        final int[] i = {0};
+
+
+        btn1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+
+            public void onClick(View view)
+            {
+                i[0] = i[0] +1;
+
+                Toast.makeText(getApplicationContext(),"Button clicked:"+String.valueOf(i[0]),Toast.LENGTH_LONG).show();
+
+
+
+
+            }
+        });
+
+    }
+}
+
+
+
+
+
+#xml file
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CountNumberOfClick">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="Click me"
+        android:background="@android:color/black"
+       android:layout_centerInParent="true"
+        android:id="@+id/clickbtn"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
